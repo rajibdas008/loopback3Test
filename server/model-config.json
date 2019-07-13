@@ -14,7 +14,7 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "mysql"
   },
   "AccessToken": {
     "dataSource": "db",
@@ -37,6 +37,14 @@
   },
   "user": {
     "dataSource": "db",
+    "public": true
+  },
+  "task": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "student": {
+    "dataSource": "mysql",
     "public": true
   }
 }

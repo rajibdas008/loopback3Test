@@ -1,0 +1,61 @@
+{
+  "name": "task",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "forceId": false,
+  "properties": {
+    "task_name": {
+      "type": "string",
+      "required": true
+    },
+    "user_id": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "getProfile": {
+      "accepts": [
+        {
+          "arg": "name",
+          "type": "string"
+        }
+      ],
+      "returns": {
+        "arg": "data",
+        "type": "object",
+        "root": true
+      },
+      "http": {
+        "verb": "get",
+        "path": "/profile/:name"
+      }
+    },
+    "add": {
+      "accepts": [
+        {
+          "arg": "body",
+          "type": "object",
+          "required": true,
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "data",
+        "type": "object",
+        "root": true
+      },
+      "http": {
+        "verb": "post",
+        "path": "/add"
+      }
+    }
+  }
+}
